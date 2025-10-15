@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0"
   xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
@@ -529,6 +529,7 @@
     <ClCompile Include="..\src\framework\graphics\drawcache.cpp" />
     <ClCompile Include="..\src\framework\graphics\drawqueue.cpp" />
     <ClCompile Include="..\src\framework\graphics\fontmanager.cpp" />
+    <ClCompile Include="..\src\framework\graphics\truetypefont.cpp" />
     <ClCompile Include="..\src\framework\graphics\framebuffer.cpp" />
     <ClCompile Include="..\src\framework\graphics\framebuffermanager.cpp" />
     <ClCompile Include="..\src\framework\graphics\graph.cpp" />
@@ -691,6 +692,7 @@
     <ClInclude Include="..\src\framework\graphics\drawcache.h" />
     <ClInclude Include="..\src\framework\graphics\drawqueue.h" />
     <ClInclude Include="..\src\framework\graphics\fontmanager.h" />
+    <ClInclude Include="..\src\framework\graphics\truetypefont.h" />
     <ClInclude Include="..\src\framework\graphics\framebuffer.h" />
     <ClInclude Include="..\src\framework\graphics\framebuffermanager.h" />
     <ClInclude Include="..\src\framework\graphics\glutil.h" />

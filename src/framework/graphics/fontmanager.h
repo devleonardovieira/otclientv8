@@ -35,6 +35,15 @@ public:
     void clearFonts();
 
     void importFont(std::string file);
+    void importTTFFont(const std::string& ttfFile,
+                       const std::string& fontName,
+                       int pixelHeight,
+                       int yOffset = 0,
+                       Size glyphSpacing = Size(1, 0),
+                       int spaceWidth = 3,
+                       int firstGlyph = 32,
+                       int lastGlyph = 255,
+                       bool setDefault = false);
 
     bool fontExists(const std::string& fontName);
     BitmapFontPtr getFont(const std::string& fontName);

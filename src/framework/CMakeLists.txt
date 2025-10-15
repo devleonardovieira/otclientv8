@@ -145,8 +145,14 @@ set(framework_SOURCES ${framework_SOURCES}
     ${CMAKE_CURRENT_LIST_DIR}/platform/platform.h
 )
 
-set_source_files_properties(${CMAKE_CURRENT_LIST_DIR}/luafunctions.cpp
-                            PROPERTIES LANGUAGE CXX COMPILE_FLAGS "-g0 -Os")
+if(MSVC)
+    # Use MSVC-friendly flags; avoid GCC-specific -g0/-Os and fix section limit
+    set_source_files_properties(${CMAKE_CURRENT_LIST_DIR}/luafunctions.cpp
+                                PROPERTIES LANGUAGE CXX COMPILE_FLAGS "/bigobj")
+else()
+    set_source_files_properties(${CMAKE_CURRENT_LIST_DIR}/luafunctions.cpp
+                                PROPERTIES LANGUAGE CXX COMPILE_FLAGS "-g0 -Os")
+endif()
 
 # some build options
 option(LUAJIT "Use lua jit" ON)
@@ -170,8 +176,12 @@ endif()
 
 set (CMAKE_CXX_STANDARD 17)
 
-# gcc compile flags
-set(WARNS_FLAGS "-Wall -Wextra -Wno-unused -Wno-unused-parameter -Wno-unused-result")
+# compiler warning flags (GCC/Clang only)
+if(MSVC)
+    set(WARNS_FLAGS "")
+else()
+    set(WARNS_FLAGS "-Wall -Wextra -Wno-unused -Wno-unused-parameter -Wno-unused-result")
+endif()
 if(WASM)
     set(CMAKE_CXX_FLAGS                   "${CMAKE_CXX_FLAGS} ${WARNS_FLAGS} ${ARCH_FLAGS} -s USE_ZLIB=1 -s USE_LIBPNG=1 -s USE_SDL=2 -s USE_BOOST_HEADERS=1 -s USE_PTHREADS=1 -O1") # add -Ofast
     set(framework_INCLUDE_DIRS ${framework_INCLUDE_DIRS} 
@@ -190,12 +200,23 @@ if(WASM)
     set(framework_SOURCES ${framework_SOURCES} ${LUA_SRC})
     message(STATUS "LUA: " ${LUA_SRC})
 else()
-    set(CMAKE_CXX_FLAGS                   "${CMAKE_CXX_FLAGS} ${WARNS_FLAGS} ${ARCH_FLAGS} -pipe")
-    set(CMAKE_CXX_FLAGS_COMPILESPEED      "-O0")
-    set(CMAKE_CXX_FLAGS_DEBUG             "-O0 -g")
-    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO    "-O1 -g -fno-omit-frame-pointer")
-    set(CMAKE_CXX_FLAGS_RELEASE           "-O2")
-    set(CMAKE_CXX_FLAGS_PERFORMANCE       "-Ofast -march=native")
+    # Only apply GCC/Clang flags on non-MSVC toolchains
+    if(MSVC)
+        # Use MSVC-friendly options
+        set(CMAKE_CXX_FLAGS                   "${CMAKE_CXX_FLAGS} ${ARCH_FLAGS} /bigobj")
+        set(CMAKE_CXX_FLAGS_COMPILESPEED      "")
+        set(CMAKE_CXX_FLAGS_DEBUG             "")
+        set(CMAKE_CXX_FLAGS_RELWITHDEBINFO    "")
+        set(CMAKE_CXX_FLAGS_RELEASE           "")
+        set(CMAKE_CXX_FLAGS_PERFORMANCE       "")
+    else()
+        set(CMAKE_CXX_FLAGS                   "${CMAKE_CXX_FLAGS} ${WARNS_FLAGS} ${ARCH_FLAGS} -pipe")
+        set(CMAKE_CXX_FLAGS_COMPILESPEED      "-O0")
+        set(CMAKE_CXX_FLAGS_DEBUG             "-O0 -g")
+        set(CMAKE_CXX_FLAGS_RELWITHDEBINFO    "-O1 -g -fno-omit-frame-pointer")
+        set(CMAKE_CXX_FLAGS_RELEASE           "-O2")
+        set(CMAKE_CXX_FLAGS_PERFORMANCE       "-Ofast -march=native")
+    endif()
 endif()
 
 if(USE_LTO)
@@ -236,8 +257,22 @@ if(NOT WASM)
     set(Boost_USE_STATIC_LIBS ${USE_STATIC_LIBS})
     find_package(Boost 1.67.0 COMPONENTS ${REQUIRED_BOOST_COMPONENTS} REQUIRED)
 
-    #find zip
-    find_package(LibZip REQUIRED)
+    # find zip (prefer config package from vcpkg if available)
+    if(WIN32)
+        find_package(libzip CONFIG QUIET)
+        if(libzip_FOUND)
+            # Prefer imported target from vcpkg when available
+            list(APPEND framework_LIBRARIES libzip::zip)
+            set(LIBZIP_LIBRARY libzip::zip)
+            message(STATUS "libzip: using CONFIG package (libzip::zip)")
+        else()
+            find_package(LibZip REQUIRED)
+            message(STATUS "libzip: using FindLibZip.cmake")
+        endif()
+    else()
+        find_package(LibZip REQUIRED)
+        message(STATUS "libzip: using FindLibZip.cmake")
+    endif()
     find_package(ZLIB REQUIRED)
     find_package(BZip2 REQUIRED)
 
@@ -271,7 +306,40 @@ if(NOT WASM)
     )
 
     if(WIN32)
-        set(framework_LIBRARIES ${framework_LIBRARIES} -lbcrypt -ldbghelp -lshlwapi -liphlpapi -lpsapi)
+        # Add required Windows system libraries with compiler-appropriate naming
+        if(MSVC)
+            list(APPEND framework_LIBRARIES
+                bcrypt
+                dbghelp
+                shlwapi
+                iphlpapi
+                psapi
+                winmm
+                shell32
+                version
+                user32
+                gdi32
+                ole32
+                wtsapi32
+                ws2_32
+            )
+        else()
+            list(APPEND framework_LIBRARIES
+                -lbcrypt
+                -ldbghelp
+                -lshlwapi
+                -liphlpapi
+                -lpsapi
+                -lwinmm
+                -lshell32
+                -lversion
+                -luser32
+                -lgdi32
+                -lole32
+                -lwtsapi32
+                -lws2_32
+            )
+        endif()
     endif()
 
     set(framework_INCLUDE_DIRS ${framework_INCLUDE_DIRS}
@@ -316,8 +384,11 @@ if(USE_LIBCPP)
 endif()
 
 if(WIN32)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthreads")
-    set(framework_DEFINITIONS ${framework_DEFINITIONS} -D_WIN32_WINNT=0x0501 -DWIN32)
+    if(MINGW)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthreads")
+    endif()
+    # Avoid Windows min/max macro conflicts with std::min/std::max
+    set(framework_DEFINITIONS ${framework_DEFINITIONS} -D_WIN32_WINNT=0x0501 -DWIN32 -DNOMINMAX)
     #set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -Wl,--large-address-aware") # strip all debug information
     set(SYSTEM_LIBRARIES "")
 else()
@@ -399,6 +470,8 @@ if(FRAMEWORK_GRAPHICS)
         ${CMAKE_CURRENT_LIST_DIR}/graphics/atlas.h
         ${CMAKE_CURRENT_LIST_DIR}/graphics/bitmapfont.cpp
         ${CMAKE_CURRENT_LIST_DIR}/graphics/bitmapfont.h
+        ${CMAKE_CURRENT_LIST_DIR}/graphics/truetypefont.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/graphics/truetypefont.h
         ${CMAKE_CURRENT_LIST_DIR}/graphics/cachedtext.cpp
         ${CMAKE_CURRENT_LIST_DIR}/graphics/cachedtext.h
         ${CMAKE_CURRENT_LIST_DIR}/graphics/colorarray.h
