@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A0F0D098-7B0F-3286-8D01-F83A70380A41}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>otclient</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\otclientv8\build-vs-dyn3\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">otclient.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">otclient</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\otclientv8\build-vs-dyn3\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">otclient.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">otclient</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">G:\otclientv8\build-vs-dyn3\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">otclient.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">otclient</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">G:\otclientv8\build-vs-dyn3\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">otclient.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">otclient</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/include" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization></Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BUILD_TYPE="Release";BUILD_COMMIT="devel";BUILD_REVISION=0;WITH_ENCRYPTION;NDEBUG;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;BUILD_TYPE=\"Release\";BUILD_COMMIT=\"devel\";BUILD_REVISION=0;WITH_ENCRYPTION;NDEBUG;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary G:/otclientv8/build-vs-dyn3/Debug/otclient.exe -installedDir G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/debug/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>vcpkg_installed\x64-windows\debug\lib\boost_filesystem-vc143-mt-gd-x64-1_86.lib;vcpkg_installed\x64-windows\lib\lua51.lib;vcpkg_installed\x64-windows\debug\lib\physfs.lib;vcpkg_installed\x64-windows\lib\libssl.lib;vcpkg_installed\x64-windows\lib\libcrypto.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\debug\lib\zip.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\bz2.lib;bcrypt.lib;dbghelp.lib;shlwapi.lib;iphlpapi.lib;psapi.lib;winmm.lib;shell32.lib;version.lib;user32.lib;gdi32.lib;ole32.lib;wtsapi32.lib;ws2_32.lib;imagehlp.lib;vcpkg_installed\x64-windows\debug\lib\glew32d.lib;opengl32.lib;glu32.lib;ws2_32.lib;mswsock.lib;vcpkg_installed\x64-windows\debug\lib\boost_system-vc143-mt-gd-x64-1_86.lib;imagehlp.lib;vcpkg_installed\x64-windows\debug\lib\glew32d.lib;opengl32.lib;glu32.lib;mswsock.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/otclientv8/build-vs-dyn3/Debug/otclient.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/otclientv8/build-vs-dyn3/Debug/otclient.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/include" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization></Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BUILD_TYPE="Release";BUILD_COMMIT="devel";BUILD_REVISION=0;WITH_ENCRYPTION;NDEBUG;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BUILD_TYPE=\"Release\";BUILD_COMMIT=\"devel\";BUILD_REVISION=0;WITH_ENCRYPTION;NDEBUG;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary G:/otclientv8/build-vs-dyn3/Release/otclient.exe -installedDir G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>vcpkg_installed\x64-windows\lib\boost_filesystem-vc143-mt-x64-1_86.lib;vcpkg_installed\x64-windows\lib\lua51.lib;vcpkg_installed\x64-windows\lib\physfs.lib;vcpkg_installed\x64-windows\lib\libssl.lib;vcpkg_installed\x64-windows\lib\libcrypto.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\zip.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\bz2.lib;bcrypt.lib;dbghelp.lib;shlwapi.lib;iphlpapi.lib;psapi.lib;winmm.lib;shell32.lib;version.lib;user32.lib;gdi32.lib;ole32.lib;wtsapi32.lib;ws2_32.lib;imagehlp.lib;vcpkg_installed\x64-windows\lib\glew32.lib;opengl32.lib;glu32.lib;ws2_32.lib;mswsock.lib;vcpkg_installed\x64-windows\lib\boost_system-vc143-mt-x64-1_86.lib;imagehlp.lib;vcpkg_installed\x64-windows\lib\glew32.lib;opengl32.lib;glu32.lib;mswsock.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/otclientv8/build-vs-dyn3/Release/otclient.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/otclientv8/build-vs-dyn3/Release/otclient.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/include" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_TYPE="Release";BUILD_COMMIT="devel";BUILD_REVISION=0;WITH_ENCRYPTION;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_TYPE=\"Release\";BUILD_COMMIT=\"devel\";BUILD_REVISION=0;WITH_ENCRYPTION;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary G:/otclientv8/build-vs-dyn3/MinSizeRel/otclient.exe -installedDir G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>vcpkg_installed\x64-windows\lib\boost_filesystem-vc143-mt-x64-1_86.lib;vcpkg_installed\x64-windows\lib\lua51.lib;vcpkg_installed\x64-windows\lib\physfs.lib;vcpkg_installed\x64-windows\lib\libssl.lib;vcpkg_installed\x64-windows\lib\libcrypto.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\zip.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\bz2.lib;bcrypt.lib;dbghelp.lib;shlwapi.lib;iphlpapi.lib;psapi.lib;winmm.lib;shell32.lib;version.lib;user32.lib;gdi32.lib;ole32.lib;wtsapi32.lib;ws2_32.lib;imagehlp.lib;vcpkg_installed\x64-windows\lib\glew32.lib;opengl32.lib;glu32.lib;ws2_32.lib;mswsock.lib;vcpkg_installed\x64-windows\lib\boost_system-vc143-mt-x64-1_86.lib;imagehlp.lib;vcpkg_installed\x64-windows\lib\glew32.lib;opengl32.lib;glu32.lib;mswsock.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/otclientv8/build-vs-dyn3/MinSizeRel/otclient.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/otclientv8/build-vs-dyn3/MinSizeRel/otclient.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/include" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization></Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BUILD_TYPE="Release";BUILD_COMMIT="devel";BUILD_REVISION=0;WITH_ENCRYPTION;NDEBUG;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BUILD_TYPE=\"Release\";BUILD_COMMIT=\"devel\";BUILD_REVISION=0;WITH_ENCRYPTION;NDEBUG;CRASH_HANDLER;_WIN32_WINNT=0x0501;NOMINMAX;FW_GRAPHICS;FW_NET;FW_XML;CLIENT;BOOST_FILESYSTEM_NO_LIB;BOOST_FILESYSTEM_DYN_LINK=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\otclientv8\src\framework\..;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include\luajit;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary G:/otclientv8/build-vs-dyn3/RelWithDebInfo/otclient.exe -installedDir G:/otclientv8/build-vs-dyn3/vcpkg_installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>vcpkg_installed\x64-windows\lib\boost_filesystem-vc143-mt-x64-1_86.lib;vcpkg_installed\x64-windows\lib\lua51.lib;vcpkg_installed\x64-windows\lib\physfs.lib;vcpkg_installed\x64-windows\lib\libssl.lib;vcpkg_installed\x64-windows\lib\libcrypto.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\zip.lib;vcpkg_installed\x64-windows\lib\zlib.lib;vcpkg_installed\x64-windows\lib\bz2.lib;bcrypt.lib;dbghelp.lib;shlwapi.lib;iphlpapi.lib;psapi.lib;winmm.lib;shell32.lib;version.lib;user32.lib;gdi32.lib;ole32.lib;wtsapi32.lib;ws2_32.lib;imagehlp.lib;vcpkg_installed\x64-windows\lib\glew32.lib;opengl32.lib;glu32.lib;ws2_32.lib;mswsock.lib;vcpkg_installed\x64-windows\lib\boost_system-vc143-mt-x64-1_86.lib;imagehlp.lib;vcpkg_installed\x64-windows\lib\glew32.lib;opengl32.lib;glu32.lib;mswsock.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/otclientv8/build-vs-dyn3/RelWithDebInfo/otclient.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/otclientv8/build-vs-dyn3/RelWithDebInfo/otclient.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="G:\otclientv8\build-vs-dyn3\CMakeFiles\812ed20bf4dacd105896ac8a4917b64b\otcicon.res.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating otcicon.res</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+rc /IG:/otclientv8/src /fo G:/otclientv8/build-vs-dyn3/otcicon.res G:/otclientv8/src/otcicon.rc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\otclientv8\build-vs-dyn3\otcicon.res</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating otcicon.res</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+rc /IG:/otclientv8/src /fo G:/otclientv8/build-vs-dyn3/otcicon.res G:/otclientv8/src/otcicon.rc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\otclientv8\build-vs-dyn3\otcicon.res</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating otcicon.res</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+rc /IG:/otclientv8/src /fo G:/otclientv8/build-vs-dyn3/otcicon.res G:/otclientv8/src/otcicon.rc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">G:\otclientv8\build-vs-dyn3\otcicon.res</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating otcicon.res</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+rc /IG:/otclientv8/src /fo G:/otclientv8/build-vs-dyn3/otcicon.res G:/otclientv8/src/otcicon.rc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">G:\otclientv8\build-vs-dyn3\otcicon.res</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="G:\otclientv8\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule G:/otclientv8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/otclientv8 -BG:/otclientv8/build-vs-dyn3 --check-stamp-file G:/otclientv8/build-vs-dyn3/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\SelectLibraryConfigurations.cmake;C:\vcpkg\scripts\buildsystems\vcpkg.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCXXCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeRCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeSystem.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\CopyImportedTargetProperties.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;G:\otclientv8\src\client\CMakeLists.txt;G:\otclientv8\src\framework\CMakeLists.txt;G:\otclientv8\src\framework\cmake\FindLuaJIT.cmake;G:\otclientv8\src\framework\cmake\FindOpenSSL.cmake;G:\otclientv8\src\framework\cmake\FindZLIB.cmake;G:\otclientv8\vcpkg.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\otclientv8\build-vs-dyn3\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule G:/otclientv8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/otclientv8 -BG:/otclientv8/build-vs-dyn3 --check-stamp-file G:/otclientv8/build-vs-dyn3/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\SelectLibraryConfigurations.cmake;C:\vcpkg\scripts\buildsystems\vcpkg.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCXXCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeRCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeSystem.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\CopyImportedTargetProperties.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;G:\otclientv8\src\client\CMakeLists.txt;G:\otclientv8\src\framework\CMakeLists.txt;G:\otclientv8\src\framework\cmake\FindLuaJIT.cmake;G:\otclientv8\src\framework\cmake\FindOpenSSL.cmake;G:\otclientv8\src\framework\cmake\FindZLIB.cmake;G:\otclientv8\vcpkg.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\otclientv8\build-vs-dyn3\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule G:/otclientv8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/otclientv8 -BG:/otclientv8/build-vs-dyn3 --check-stamp-file G:/otclientv8/build-vs-dyn3/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\SelectLibraryConfigurations.cmake;C:\vcpkg\scripts\buildsystems\vcpkg.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCXXCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeRCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeSystem.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\CopyImportedTargetProperties.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;G:\otclientv8\src\client\CMakeLists.txt;G:\otclientv8\src\framework\CMakeLists.txt;G:\otclientv8\src\framework\cmake\FindLuaJIT.cmake;G:\otclientv8\src\framework\cmake\FindOpenSSL.cmake;G:\otclientv8\src\framework\cmake\FindZLIB.cmake;G:\otclientv8\vcpkg.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">G:\otclientv8\build-vs-dyn3\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule G:/otclientv8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/otclientv8 -BG:/otclientv8/build-vs-dyn3 --check-stamp-file G:/otclientv8/build-vs-dyn3/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\SelectLibraryConfigurations.cmake;C:\vcpkg\scripts\buildsystems\vcpkg.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeCXXCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeRCCompiler.cmake;G:\otclientv8\build-vs-dyn3\CMakeFiles\4.1.1\CMakeSystem.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\BoostConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_align\boost_align-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_assert\boost_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_atomic\boost_atomic-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_bind\boost_bind-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_concept_check\boost_concept_check-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_config\boost_config-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_container_hash\boost_container_hash-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_core\boost_core-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_describe\boost_describe-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_detail\boost_detail-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_filesystem\boost_filesystem-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function\boost_function-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_function_types\boost_function_types-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_functional\boost_functional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_fusion\boost_fusion-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_headers\boost_headers-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_io\boost_io-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_iterator\boost_iterator-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_move\boost_move-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mp11\boost_mp11-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_mpl\boost_mpl-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_optional\boost_optional-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_predef\boost_predef-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_preprocessor\boost_preprocessor-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_scope\boost_scope-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_smart_ptr\boost_smart_ptr-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_static_assert\boost_static_assert-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_system\boost_system-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_throw_exception\boost_throw_exception-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_tuple\boost_tuple-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_type_traits\boost_type_traits-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_typeof\boost_typeof-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_utility\boost_utility-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_variant2\boost_variant2-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\boost_winapi\boost_winapi-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\CopyImportedTargetProperties.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\glew-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\glew\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config-version.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-config.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\libzip\libzip-targets.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\OpenSSLConfigVersion.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-debug.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig-release.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\PhysFSConfig.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\physfs\vcpkg-cmake-wrapper.cmake;G:\otclientv8\build-vs-dyn3\vcpkg_installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;G:\otclientv8\src\client\CMakeLists.txt;G:\otclientv8\src\framework\CMakeLists.txt;G:\otclientv8\src\framework\cmake\FindLuaJIT.cmake;G:\otclientv8\src\framework\cmake\FindOpenSSL.cmake;G:\otclientv8\src\framework\cmake\FindZLIB.cmake;G:\otclientv8\vcpkg.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">G:\otclientv8\build-vs-dyn3\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="G:\otclientv8\src\framework\const.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\global.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\pch.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\luafunctions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="G:\otclientv8\src\framework\util\color.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\color.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\util\crypt.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\crypt.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\databuffer.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\util\extras.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\extras.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\util\pngunpacker.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\pngunpacker.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\framecounter.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\matrix.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\point.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\util\qrcodegen.c" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\qrcodegen.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\rect.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\size.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\util\stats.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\util\stats.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\any.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\boolean.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\cast.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\compiler.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\stdext\demangle.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\demangle.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\dumper.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\dynamic_storage.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\exception.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\fastrand.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\format.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\stdext\math.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\math.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\stdext\net.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\net.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\packed_any.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\packed_storage.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\stdext.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\stdext\string.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\string.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\thread.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\stdext\time.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\time.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\traits.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\types.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\stdext\uri.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\stdext\uri.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\adaptiverenderer.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\adaptiverenderer.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\application.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\application.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\asyncdispatcher.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\asyncdispatcher.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\binarytree.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\binarytree.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\clock.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\clock.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\config.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\config.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\configmanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\configmanager.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\declarations.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\event.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\event.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\eventdispatcher.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\eventdispatcher.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\filestream.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\filestream.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\graphicalapplication.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\graphicalapplication.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\inputevent.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\logger.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\logger.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\module.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\module.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\modulemanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\modulemanager.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\resourcemanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\resourcemanager.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\scheduledevent.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\scheduledevent.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\core\timer.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\core\timer.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\declarations.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\luaengine\lbitlib.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\lbitlib.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\luabinder.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\luaengine\luaexception.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\luaexception.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\luaengine\luainterface.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\luainterface.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\luaengine\luaobject.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\luaobject.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\luaengine\luavaluecasts.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\luaengine\luavaluecasts.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\declarations.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\otml.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\otml\otmldocument.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\otmldocument.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\otml\otmlemitter.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\otmlemitter.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\otml\otmlexception.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\otmlexception.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\otml\otmlnode.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\otmlnode.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\otml\otmlparser.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\otml\otmlparser.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\platform\crashhandler.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\unixcrashhandler.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\win32crashhandler.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\win32platform.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\unixplatform.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\platform.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\platform\platform.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\animatedtexture.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\animatedtexture.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\apngloader.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\apngloader.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\atlas.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\atlas.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\bitmapfont.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\bitmapfont.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\truetypefont.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\truetypefont.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\cachedtext.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\cachedtext.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\colorarray.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\coordsbuffer.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\coordsbuffer.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\declarations.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\deptharray.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\drawcache.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\drawcache.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\drawqueue.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\drawqueue.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\fontmanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\fontmanager.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\framebuffer.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\framebuffer.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\framebuffermanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\framebuffermanager.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\glutil.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\graphics.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\graphics.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\graph.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\graph.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\hardwarebuffer.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\hardwarebuffer.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\image.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\image.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\painter.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\painter.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\paintershaderprogram.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\paintershaderprogram.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\shader.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\shader.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\shaderprogram.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\shaderprogram.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\shadermanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\shadermanager.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\textrender.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\textrender.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\texture.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\texture.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\graphics\texturemanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\texturemanager.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\vertexarray.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\shaders\newshader.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\shaders\shaders.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\graphics\shaders\shadersources.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\declarations.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\ui.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uianchorlayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uianchorlayout.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiboxlayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uiboxlayout.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiflexbox.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uiflexbox.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uigridlayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uigridlayout.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uihorizontallayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uihorizontallayout.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uilayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uilayout.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uimanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uimanager.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uitextedit.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uitextedit.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uitranslator.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uitranslator.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiverticallayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uiverticallayout.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiwidget.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\ui\uiwidget.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiwidgetbasestyle.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiwidgetimage.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\ui\uiwidgettext.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\platformwindow.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\platform\platformwindow.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\win32window.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\platform\win32window.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\x11window.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\platform\x11window.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\platform\sdlwindow.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\platform\sdlwindow.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\input\mouse.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\input\mouse.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\connection.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\connection.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\declarations.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\inputmessage.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\inputmessage.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\outputmessage.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\outputmessage.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\protocol.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\protocol.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\server.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\server.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\packet_player.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\packet_player.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\net\packet_recorder.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\net\packet_recorder.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\proxy\proxy.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\proxy\proxy.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\proxy\proxy_client.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\proxy\proxy_client.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\http\http.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\http\http.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\http\session.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\http\session.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\http\websocket.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\http\websocket.h" />
+    <ClInclude Include="G:\otclientv8\src\framework\http\result.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\xml\tinyxml.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\xml\tinyxml.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\xml\tinystr.cpp" />
+    <ClInclude Include="G:\otclientv8\src\framework\xml\tinystr.h" />
+    <ClCompile Include="G:\otclientv8\src\framework\xml\tinyxmlerror.cpp" />
+    <ClCompile Include="G:\otclientv8\src\framework\xml\tinyxmlparser.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\const.h" />
+    <ClInclude Include="G:\otclientv8\src\client\global.h" />
+    <ClCompile Include="G:\otclientv8\src\client\luafunctions_client.cpp" />
+    <ClCompile Include="G:\otclientv8\src\client\client.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\client.h" />
+    <ClCompile Include="G:\otclientv8\src\client\animatedtext.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\animatedtext.h" />
+    <ClInclude Include="G:\otclientv8\src\client\animator.h" />
+    <ClCompile Include="G:\otclientv8\src\client\animator.cpp" />
+    <ClCompile Include="G:\otclientv8\src\client\container.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\container.h" />
+    <ClCompile Include="G:\otclientv8\src\client\creature.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\creature.h" />
+    <ClInclude Include="G:\otclientv8\src\client\declarations.h" />
+    <ClCompile Include="G:\otclientv8\src\client\effect.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\effect.h" />
+    <ClCompile Include="G:\otclientv8\src\client\game.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\game.h" />
+    <ClCompile Include="G:\otclientv8\src\client\item.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\item.h" />
+    <ClCompile Include="G:\otclientv8\src\client\localplayer.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\localplayer.h" />
+    <ClCompile Include="G:\otclientv8\src\client\map.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\map.h" />
+    <ClCompile Include="G:\otclientv8\src\client\mapio.cpp" />
+    <ClCompile Include="G:\otclientv8\src\client\mapview.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\mapview.h" />
+    <ClCompile Include="G:\otclientv8\src\client\minimap.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\minimap.h" />
+    <ClCompile Include="G:\otclientv8\src\client\lightview.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\lightview.h" />
+    <ClCompile Include="G:\otclientv8\src\client\missile.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\missile.h" />
+    <ClCompile Include="G:\otclientv8\src\client\outfit.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\outfit.h" />
+    <ClCompile Include="G:\otclientv8\src\client\player.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\player.h" />
+    <ClCompile Include="G:\otclientv8\src\client\spritemanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\spritemanager.h" />
+    <ClCompile Include="G:\otclientv8\src\client\statictext.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\statictext.h" />
+    <ClCompile Include="G:\otclientv8\src\client\thing.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\thing.h" />
+    <ClCompile Include="G:\otclientv8\src\client\thingtypemanager.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\thingtypemanager.h" />
+    <ClCompile Include="G:\otclientv8\src\client\thingtype.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\thingtype.h" />
+    <ClCompile Include="G:\otclientv8\src\client\itemtype.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\itemtype.h" />
+    <ClCompile Include="G:\otclientv8\src\client\tile.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\tile.h" />
+    <ClCompile Include="G:\otclientv8\src\client\healthbars.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\healthbars.h" />
+    <ClCompile Include="G:\otclientv8\src\client\houses.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\houses.h" />
+    <ClCompile Include="G:\otclientv8\src\client\towns.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\towns.h" />
+    <ClCompile Include="G:\otclientv8\src\client\creatures.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\creatures.h" />
+    <ClCompile Include="G:\otclientv8\src\client\luavaluecasts_client.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\luavaluecasts_client.h" />
+    <ClCompile Include="G:\otclientv8\src\client\protocolcodes.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\protocolcodes.h" />
+    <ClCompile Include="G:\otclientv8\src\client\protocolgame.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\protocolgame.h" />
+    <ClCompile Include="G:\otclientv8\src\client\protocolgameparse.cpp" />
+    <ClCompile Include="G:\otclientv8\src\client\protocolgamesend.cpp" />
+    <ClCompile Include="G:\otclientv8\src\client\uicreature.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uicreature.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uiitem.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uiitem.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uigraph.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uigraph.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uigrid.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uigrid.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uimap.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uimap.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uiminimap.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uiminimap.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uiprogressrect.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uiprogressrect.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uimapanchorlayout.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uimapanchorlayout.h" />
+    <ClCompile Include="G:\otclientv8\src\client\uisprite.cpp" />
+    <ClInclude Include="G:\otclientv8\src\client\uisprite.h" />
+    <ClInclude Include="G:\otclientv8\src\client\position.h" />
+    <ClCompile Include="G:\otclientv8\src\main.cpp" />
+    <None Include="G:\otclientv8\build-vs-dyn3\otcicon.res">
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="G:\otclientv8\build-vs-dyn3\ZERO_CHECK.vcxproj">
+      <Project>{6DFFFAF0-9C54-31BE-B5B3-D994E155B92E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

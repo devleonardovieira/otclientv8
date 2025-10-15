@@ -4,6 +4,7 @@ EnterGameWindow
 
   MenuLabel
     !text: tr('Account name')
+    font: Pokemon Solid
     anchors.left: parent.left
     anchors.top: parent.top
     text-auto-resize: true
@@ -17,6 +18,7 @@ EnterGameWindow
 
   MenuLabel
     !text: tr('Password')
+    font: Da Mad Rave
     anchors.left: prev.left
     anchors.top: prev.bottom
     margin-top: 8
@@ -31,6 +33,7 @@ EnterGameWindow
     
   MenuLabel
     !text: tr('Token')
+    font: bixo
     anchors.left: prev.left
     anchors.top: prev.bottom
     text-auto-resize: true
@@ -129,6 +132,7 @@ EnterGameWindow
     MenuLabel
       id: clientLabel
       !text: tr('Version')
+      font: OAKLAND
       anchors.left: serverHostTextEdit.right
       anchors.top: serverLabel.top
       text-auto-resize: true

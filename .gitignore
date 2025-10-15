@@ -131,3 +131,10 @@ ipch/
 # ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper
+projeto_fonts.md
+boost_filesystem-vc143-mt-x64-1_86.dll
+fontmanager.cpp
+data/fonts/bixo.TTF
+data/fonts/Da Mad Rave.otf
+data/fonts/OAKLAND.ttf
+data/fonts/Pokemon Solid.ttf
