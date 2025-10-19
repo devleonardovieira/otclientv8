@@ -3,11 +3,12 @@ EnterGameWindow
   @onEnter: EnterGame.doLogin()
 
   MenuLabel
-    !text: tr('Account name')
-    font: Pokemon Solid
+    text: おはようございます。はじめまして！ 私はマウリチオさん です。私はせんせい です
+    font: NotoSansJP-Regular
     anchors.left: parent.left
     anchors.top: parent.top
-    text-auto-resize: true
+    height: 40
+    
 
   TextEdit
     id: accountNameTextEdit
@@ -17,8 +18,8 @@ EnterGameWindow
     margin-top: 2
 
   MenuLabel
-    !text: tr('Password')
-    font: Da Mad Rave
+    !text: tr('これ')
+    font: NotoSansJP-Regular
     anchors.left: prev.left
     anchors.top: prev.bottom
     margin-top: 8

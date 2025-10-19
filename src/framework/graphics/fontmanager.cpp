@@ -199,6 +199,9 @@ void FontManager::importTTFFont(const std::string& ttfFile,
             fontNode->addChild(n);
         }
 
+        // Store TTF source for lazy Unicode rasterization fallback
+        fontNode->addChild(OTMLNode::create("ttf-source", ttfFile));
+
         if (setDefault) {
             OTMLNodePtr n = OTMLNode::create("default");
             n->write<bool>(true);

@@ -12,7 +12,6 @@ Services = {
   feedback = "http://otclient.ovh/api/feedback.php",
   status = ""
 }
-
 -- Servers accept http login url, websocket login url or ip:port:version
 Servers = {
 --[[  OTClientV8 = "http://otclient.ovh/api/login.php",

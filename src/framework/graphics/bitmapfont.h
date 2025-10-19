@@ -68,6 +68,7 @@ public:
     int getYOffset() { return m_yOffset; }
     Size getGlyphSpacing() { return m_glyphSpacing; }
     int getUnderlineOffset() { return m_underlineOffset; }
+    const std::string& getTTFSource() const { return m_ttfSource; }
 
 private:
     /// Calculates each font character by inspecting font bitmap
@@ -84,6 +85,7 @@ private:
     TexturePtr m_texture;
     Rect m_glyphsTextureCoords[256];
     Size m_glyphsSize[256];
+    std::string m_ttfSource;
 };
 
 

@@ -185,3 +185,141 @@ bool TrueTypeFont::rasterizeAtlas(const uint8_t* ttfData,
     return ok;
 #endif
 }
+
+ImagePtr TrueTypeFont::rasterizeString(const uint8_t* ttfData,
+                                       int ttfSize,
+                                       const std::string& fontFamilyName,
+                                       int pixelHeight,
+                                       const std::wstring& text,
+                                       int yOffset)
+{
+#ifndef _WIN32
+    return nullptr;
+#else
+    if (pixelHeight <= 0 || ttfData == nullptr || ttfSize <= 0 || text.empty())
+        return nullptr;
+
+    ULONG_PTR gdiplusToken = 0;
+    Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+    if (Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr) != Gdiplus::Ok)
+        return nullptr;
+
+    ImagePtr outImg;
+    do {
+        Gdiplus::PrivateFontCollection pfc;
+        if (pfc.AddMemoryFont((void*)ttfData, ttfSize) != Gdiplus::Ok)
+            break;
+
+        int familyCount = pfc.GetFamilyCount();
+        if (familyCount <= 0)
+            break;
+
+        std::vector<Gdiplus::FontFamily> families(familyCount);
+        pfc.GetFamilies(familyCount, families.data(), &familyCount);
+        Gdiplus::FontFamily* chosenFamily = &families[0];
+        if (!fontFamilyName.empty()) {
+            for (int i = 0; i < familyCount; ++i) {
+                WCHAR name[LF_FACESIZE] = {0};
+                families[i].GetFamilyName(name);
+                std::wstring wname(name);
+                if (std::wstring(fontFamilyName.begin(), fontFamilyName.end()) == wname) {
+                    chosenFamily = &families[i];
+                    break;
+                }
+            }
+        }
+
+        Gdiplus::Font font(chosenFamily, (Gdiplus::REAL)pixelHeight, Gdiplus::FontStyleRegular, Gdiplus::UnitPixel);
+        if (!font.IsAvailable())
+            break;
+
+        // Metrics for line height
+        const int em = chosenFamily->GetEmHeight(Gdiplus::FontStyleRegular);
+        const int ascent = chosenFamily->GetCellAscent(Gdiplus::FontStyleRegular);
+        const int descent = chosenFamily->GetCellDescent(Gdiplus::FontStyleRegular);
+        const int lineSpacing = chosenFamily->GetLineSpacing(Gdiplus::FontStyleRegular);
+        const float ascentPx = (em > 0) ? (pixelHeight * (float)ascent / (float)em) : (float)pixelHeight * 0.8f;
+        const float descentPx = (em > 0) ? (pixelHeight * (float)descent / (float)em) : (float)pixelHeight * 0.2f;
+        const float lineSpacingPx = (em > 0) ? (pixelHeight * (float)lineSpacing / (float)em) : (float)pixelHeight;
+
+        // Split lines on '\n'
+        std::vector<std::wstring> lines;
+        size_t start = 0;
+        while (true) {
+            size_t pos = text.find(L'\n', start);
+            if (pos == std::wstring::npos) {
+                lines.emplace_back(text.substr(start));
+                break;
+            } else {
+                lines.emplace_back(text.substr(start, pos - start));
+                start = pos + 1;
+            }
+        }
+
+        // Measure max width
+        int maxW = 1;
+        {
+            Gdiplus::Bitmap scratch(1024, 1024, PixelFormat32bppARGB);
+            Gdiplus::Graphics g(&scratch);
+            g.SetTextRenderingHint(Gdiplus::TextRenderingHintAntiAliasGridFit);
+            g.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
+
+            Gdiplus::StringFormat fmt(Gdiplus::StringFormat::GenericTypographic());
+            fmt.SetFormatFlags(fmt.GetFormatFlags() | Gdiplus::StringFormatFlagsNoWrap | Gdiplus::StringFormatFlagsNoFontFallback | Gdiplus::StringFormatFlagsMeasureTrailingSpaces);
+            for (const auto& wline : lines) {
+                if (wline.empty()) { maxW = std::max(maxW, 1); continue; }
+                Gdiplus::GraphicsPath path;
+                path.AddString(wline.c_str(), (INT)wline.length(), chosenFamily, Gdiplus::FontStyleRegular, (Gdiplus::REAL)pixelHeight,
+                               Gdiplus::PointF(0.0f, 0.0f), &fmt);
+                Gdiplus::RectF bounds;
+                path.GetBounds(&bounds);
+                int w = (int)std::ceil(bounds.Width);
+                maxW = std::max(maxW, w);
+            }
+        }
+
+        int totalH = (int)std::ceil(lineSpacingPx) * (int)lines.size();
+        if (totalH <= 0) totalH = (int)std::ceil(lineSpacingPx);
+
+        Gdiplus::Bitmap gdibmp(maxW, totalH, PixelFormat32bppARGB);
+        {
+            Gdiplus::Graphics g(&gdibmp);
+            g.SetTextRenderingHint(Gdiplus::TextRenderingHintAntiAliasGridFit);
+            g.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
+            g.Clear(Gdiplus::Color(0, 0, 0, 0));
+            Gdiplus::SolidBrush brush(Gdiplus::Color(255, 255, 255, 255));
+            Gdiplus::StringFormat fmt(Gdiplus::StringFormat::GenericTypographic());
+            fmt.SetFormatFlags(fmt.GetFormatFlags() | Gdiplus::StringFormatFlagsNoWrap | Gdiplus::StringFormatFlagsNoFontFallback);
+
+            int lineIndex = 0;
+            for (const auto& wline : lines) {
+                float destY = (float)(lineIndex * std::ceil(lineSpacingPx) + yOffset);
+                if (!wline.empty()) {
+                    Gdiplus::GraphicsPath path;
+                    path.AddString(wline.c_str(), (INT)wline.length(), chosenFamily, Gdiplus::FontStyleRegular, (Gdiplus::REAL)pixelHeight,
+                                   Gdiplus::PointF(0.0f, destY), &fmt);
+                    g.FillPath(&brush, &path);
+                }
+                ++lineIndex;
+            }
+        }
+
+        // Copy alpha out
+        outImg = std::make_shared<Image>(Size(maxW, totalH));
+        for (int y = 0; y < totalH; ++y) {
+            for (int x = 0; x < maxW; ++x) {
+                Gdiplus::Color c;
+                gdibmp.GetPixel(x, y, &c);
+                uint8 a = (uint8)c.GetA();
+                if (a)
+                    outImg->setPixel(x, y, Color((uint8)255, (uint8)255, (uint8)255, a));
+                else
+                    outImg->setPixel(x, y, Color((uint8)0, (uint8)0, (uint8)0, (uint8)0));
+            }
+        }
+    } while (false);
+
+    Gdiplus::GdiplusShutdown(gdiplusToken);
+    return outImg;
+#endif
+}

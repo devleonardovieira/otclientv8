@@ -31,6 +31,15 @@ public:
                                int yOffset,
                                int spaceWidth,
                                TrueTypeAtlasResult& out);
+
+    // Rasterize a single UTF-8 string into an Image using the provided TTF data.
+    // Returns nullptr on failure.
+    static ImagePtr rasterizeString(const uint8_t* ttfData,
+                                    int ttfSize,
+                                    const std::string& fontFamilyName,
+                                    int pixelHeight,
+                                    const std::wstring& text,
+                                    int yOffset);
 };
 
 #endif
